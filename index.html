@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Todos with JQuery</title>
+</head>
+<body>
+        
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col">
+                    <h1>Мои задачи</h1>
+                    <form action="" method="POST" id="form">
+                        <div class="form-group">
+                            <label for="text">Текст задачи</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-lg" id="textInput" aria-describedby="textHelp">
+                                <div class="input-group-append">
+                                    <button class="btn btn-lg btn-outline-primary" type="submit" id="createBtn" disabled>Создать</button>
+                                </div>
+                            </div>
+                            <small id="textHelp" class="form-text text-muted">Напиши, что нужно сделать</small>
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>
+                                Текущие задачи
+                            </h2>
+                            <ul class="list-group" id="todos">
+                                <!-- <li class="list-group-item">
+                                    <div class="form-check mb-2">
+                                        <input type="checkbox" class="form-check-input" id="todo-1">
+                                        <label class="form-check-label" for="todo-1">Купить продукты</label>
+                                    </div>
+                                    <input type="text" class="form-control mb-2 mt-2" id="todoInput-1" hidden>
+                                    <button class="btn btn-sm btn-warning editBtn" type="button">Редактировать</button>
+                                    <button class="btn btn-sm btn-danger deleteBtn" type="button">Удалить</button>
+                                    <button class="btn btn-sm btn-success saveBtn" hidden type="button">Сохранить</button>
+                                    <button class="btn btn-sm btn-secondary cancelBtn" hidden type="button">Отменить</button>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check mb-2">
+                                        <input type="checkbox" class="form-check-input" id="todo-2">
+                                        <label class="form-check-label" for="todo-1">Купить продукты</label>
+                                    </div>
+                                    <input type="text" class="form-control mb-2 mt-2" id="todoInput-2" hidden>
+                                    <button class="btn btn-sm btn-warning editBtn" type="button">Редактировать</button>
+                                    <button class="btn btn-sm btn-danger deleteBtn" type="button">Удалить</button>
+                                    <button class="btn btn-sm btn-success saveBtn" hidden type="button">Сохранить</button>
+                                    <button class="btn btn-sm btn-secondary cancelBtn" hidden type="button">Отменить</button>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check mb-2">
+                                        <input type="checkbox" class="form-check-input" id="todo-3">
+                                        <label class="form-check-label" for="todo-1">Купить продукты</label>
+                                    </div>
+                                    <input type="text" class="form-control mb-2 mt-2" id="todoInput-3" hidden>
+                                    <button class="btn btn-sm btn-warning editBtn" type="button">Редактировать</button>
+                                    <button class="btn btn-sm btn-danger deleteBtn" type="button">Удалить</button>
+                                    <button class="btn btn-sm btn-success saveBtn" hidden type="button">Сохранить</button>
+                                    <button class="btn btn-sm btn-secondary cancelBtn" hidden type="button">Отменить</button>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>
+                                Выполненные задачи
+                            </h2>
+                            <ul class="list-group" id="compleated">
+                                <!-- <li class="list-group-item">
+                                    Выпить кофе
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>
