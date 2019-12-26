@@ -98,6 +98,36 @@
         target.remove();
     }
 
+    function saveTask(target) {
+
+        makeReadMode(target);
+
+        let text = $(target).find('.form-control').val(),
+        id = $(target).find('.form-check-input').attr('id');
+
+    $(target).find('label').text(text);
+    
+    let tasks = getData();
+
+    $(tasks).each((index, task)=>{
+        console.log(task);
+        if (id == task.id){
+            task.text = text;
+            return false;
+        }
+    })
+
+    storeData(tasks);
+    }   
+
+    function rebootTask(target) {
+        makeReadMode(target);
+
+        $(target)
+        .find('.form-control')  
+        .val($(target).find('label').text());
+    }
+
     $('body').on('change', 'input[type="checkbox"]', function(){
         let text = $(this).next().text();
         createTask("#compleated", {
@@ -119,25 +149,25 @@
     })
 
     $('body').on('click', '.cancelBtn',function(){
-        let parent = $(this).parents('li');
-
-        makeReadMode(parent);
-
-        $(parent)
-        .find('.form-control')  
-        .val($(parent).find('label').text());
+        rebootTask($(this).parents('li'))
     })
 
+    $('body').on('keydown', '.form-control', function(e){
+        console.log(e);
+        if (e.keyCode == 27) {
+            rebootTask($(this).parents('li'))
+        }
+    })
+
+    $('body').on('keydown', '.form-control', function(e){
+        console.log(e);
+        if (e.keyCode == 13) {
+            saveTask($(this).parents('li'))
+        }
+    })
 
     $('body').on('click', '.saveBtn',function(){
-        let parent = $(this).parents('li');
-
-        makeReadMode(parent);
-            
-        $(parent)
-        .find('label')  
-        .text($(parent).find('.form-control').val());
-
+        saveTask($(this).parents('li'))
     })
 
     function makeReadMode(parent){
